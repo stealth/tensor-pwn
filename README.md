@@ -14,6 +14,10 @@ so that the legacy loader is transparently invoked. Usually *PyTorch*
 has a much more sophisticated storage format consisting of a zip file
 with a certain structure.
 
+<p align="center">
+<img src="https://github.com/stealth/tensor-pwn/blob/master/pytorch/model1.jpg" />
+</p>
+
 TensorFlow
 ----------
 

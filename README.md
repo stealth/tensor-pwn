@@ -14,6 +14,15 @@ environments.
 
 If folks are using models to be loaded on drones, you can pop drones! :)
 
+
+I was pointed to [a link](https://splint.gitbook.io/cyberblog/security-research/tensorflow-remote-code-execution-with-malicious-model) so
+someone already had fun with *TensorFlow* in past and all credits should go there. Since the attack surface
+for model loading is just too obvious it is also safe to assume that more people (the known
+unknowns) had their fun with it in past. So it is interesting to see that AI security is widely anticipated
+as prompt-bypassing or mis-training of models on conferences and media but only few people are doing it right.
+However when I hear *prompt*, I certainly think of something different. :)
+
+
 PyTorch
 -------
 

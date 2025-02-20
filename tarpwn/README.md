@@ -1,5 +1,5 @@
-7350tensorpwn
-=============
+7350tarpwn
+==========
 
 *We pwn AI setups, too! Ask us about it!*
 <p align="center">

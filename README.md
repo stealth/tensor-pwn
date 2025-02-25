@@ -1,6 +1,10 @@
 The state of AI
 ===============
 
+This is a research-repo. I occasionally add/remove stuff as I go.
+Some text may be out-dated as you read it, as some issues might have
+been fixed after I published it here.
+
 ~~I do know nothing about tensors, fancy AI, models and such but~~ I do know
 about coding, HPC and storage formats, so I will populate or not this repo
 with classic IT security related stuff that I find myself funny about AI.
@@ -13,8 +17,6 @@ execute malware when fetching pre-trained models from somewhere. If
 *you* do expect that, this repo might not be for you but it is still
 considered fun for me since I quite know how data is handled in scientific
 environments.
-
-If folks are using models to be loaded on drones, you can pop drones! :)
 
 
 I was pointed to [a link](https://splint.gitbook.io/cyberblog/security-research/tensorflow-remote-code-execution-with-malicious-model) so
@@ -31,8 +33,8 @@ caution, e.g. their safety assumption for h5 files is wrong (see *TensorFlow* se
 Tar
 ---
 
-Inside `tarpwn` you will find how to overwrite local files and therefore remotely execute code when
-attackers inject data in your network path when you are fetching training data.
+Inside [tarpwn](https://github.com/stealth/tensor-pwn/tree/master/tarpwn) you will find how to overwrite local files and therefore remotely execute code when
+attackers inject data in your network path when you are fetching training data. Training data is usually considered to be safe, unlike pickled trained models.
 
 
 PyTorch
@@ -56,6 +58,10 @@ The more recent model saving format consists of a zip file containing `__torch__
 files and such but I wasn't able to exec arbitrary code with it as the loader seems to
 be a stripped down python. But that doesn't say anything, it might just work later in time.
 If you happen to find a code exec there, just open a ticket here.
+
+
+Also [check](https://github.com/stealth/tensor-pwn/blob/master/pytorch/flamegraph.jpg) how it execs code from 3rd party repos when you debug memory
+via `torch.cuda.memory` and adds LPE opportunity.
 
 TensorFlow
 ----------
